@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Greenfoot project file
 class.Apple.image=apple.png
 class.Elephant.image=elephant_idle.png
@@ -74,3 +75,6 @@ width=832
 world.lastInstantiated=MyWorld
 xPosition=608
 yPosition=241
+=======
+
+>>>>>>> parent of 3b63681 (deleted apple comments)
