@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 #Greenfoot project file
-class.Apple.image=apple.png
+class.Apple.image=apple2.png
 class.Elephant.image=elephant_idle.png
 class.MyWorld.image=background.jpg
 dependency1.from=MyWorld
@@ -23,8 +22,8 @@ dependency6.to=Apple
 dependency6.type=UsesDependency
 editor.fx.0.height=728
 editor.fx.0.width=791
-editor.fx.0.x=667
-editor.fx.0.y=87
+editor.fx.0.x=666
+editor.fx.0.y=84
 height=551
 package.numDependencies=6
 package.numTargets=4
@@ -41,7 +40,7 @@ readme.name=@README
 readme.width=48
 readme.x=10
 readme.y=10
-simulation.speed=62
+simulation.speed=54
 target1.height=70
 target1.name=Apple
 target1.showInterface=false
@@ -75,6 +74,3 @@ width=832
 world.lastInstantiated=MyWorld
 xPosition=608
 yPosition=241
-=======
-
->>>>>>> parent of 3b63681 (deleted apple comments)

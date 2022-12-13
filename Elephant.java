@@ -1,25 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Elephant here.
+ * Elephant class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Haneesh Suthakar 
+ * @version Dec 13 2022
  */
 public class Elephant extends Actor
 {
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
-    GreenfootImage idleRight = new GreenfootImage[8];
-    GreenfootImage idleLeft = new GreenfootImage[8];
+    GreenfootImage[] idleRight = new GreenfootImage[8];
+    GreenfootImage[] idleLeft = new GreenfootImage[8];
     
     String facing = "right";
-    
+    SimpleTimer animationTimer = new SimpleTimer();
     /**
      * Constructor - A code that runs when an object is created
      */
     public Elephant()
     {
-        for(int i = 0; i < idle.length; i++)
+        for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleRight[i].scale(100, 100);
@@ -28,30 +28,48 @@ public class Elephant extends Actor
         for(int i = 0; i < idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            idleLeft[i] = idleLeft[i].mirrorHorizontally();
+            idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(100, 100);
         }
         
-        setImage(idle[0]);
+        animationTimer.mark();
+        
+        setImage(idleRight[0]);
     }
     
     int imageIndex = 0;
     public void animateElephant()
     {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if(animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
     }
     
     public void act()
     {
         if(Greenfoot.isKeyDown("d"))
         {
-            move(2);
+            move(1);
+            facing = "right";
         }
         else
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-2);
+            move(-1);
+            facing = "left";
         }
         
         eat();
