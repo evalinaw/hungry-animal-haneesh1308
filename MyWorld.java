@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * My World.
  * 
  * @author Haneesh Suthakar 
- * @version Dec 13 2022
+ * @version Dec 13, 2022
  */
 public class MyWorld extends World
 {
