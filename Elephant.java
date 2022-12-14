@@ -36,7 +36,9 @@ public class Elephant extends Actor
         
         setImage(idleRight[0]);
     }
-    
+    /**
+     * this animates the elephant.
+     */
     int imageIndex = 0;
     public void animateElephant()
     {
